@@ -1,0 +1,14 @@
+version: '2.4'
+services:
+  app:
+    build: .
+    command: npm run start:dev
+    environment:
+      - PORT=8080
+    ports:
+      - "8080:8080"
+      - "5858:5858"
+    links:
+      - mysql
+    volumes:
+      - .:/app/

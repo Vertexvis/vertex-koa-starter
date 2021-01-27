@@ -1,0 +1,11 @@
+logs
+*.log
+.DS_Store
+pids
+*.pid
+*.seed
+lib-cov
+reports
+build/Release
+node_modules
+dist
