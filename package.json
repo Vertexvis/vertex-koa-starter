@@ -1,11 +1,8 @@
 {
-  "name": "typescript-node",
-  "version": "2.1.0",
-  "description": "TypeScript template for backend applications.",
+  "name": "vertex-koa",
+  "version": "0.0.1",
+  "description": "Vertex Koa.",
   "license": "MIT",
-  "repository": {
-    "url": "https://github.com/Talento90/typescript-node.git"
-  },
   "scripts": {
     "build": "rm -rf dist && tsc",
     "build:watch": "rm -rf dist && tsc -w",
