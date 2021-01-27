@@ -1,5 +1,5 @@
-import { processPvs } from "./pvs";
 import { SceneItem } from "./index.d";
+import { processPvs } from "./pvs";
 
 export class PvsMonitor {
   public async getJson(): Promise<SceneItem[]> {

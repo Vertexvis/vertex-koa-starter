@@ -19,7 +19,7 @@ export class HealthMonitor {
   public getStatus(): Status {
     return {
       startTime: new Date(this.startTime).toISOString(),
-      isShuttingDown: this.isShuttingDown
+      isShuttingDown: this.isShuttingDown,
     };
   }
 }

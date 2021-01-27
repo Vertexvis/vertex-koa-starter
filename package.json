@@ -10,6 +10,7 @@
     "build": "rm -rf dist && tsc",
     "build:watch": "rm -rf dist && tsc -w",
     "clean": "rm -rf dist",
+    "format": "prettier --write './**/*.+(js|jsx|ts|tsx|json|yml|yaml|md|mdx|html|css)'",
     "lint": "tslint 'src/**/*.ts'",
     "start": "node dist/index.js",
     "start:dev": "tsc-watch --onSuccess 'node --inspect=0.0.0.0:5858 dist/index.js'"
@@ -34,7 +35,6 @@
     "@types/koa-router": "^7.4.1",
     "@types/node": "^14.14.22",
     "@types/pino": "^6.3.5",
-    "husky": "^4.3.8",
     "prettier": "^2.2.1",
     "tsc-watch": "^4.2.9",
     "tslint": "^5.20.1",
@@ -44,10 +44,5 @@
   },
   "engines": {
     "node": ">=12.10.0"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint"
-    }
   }
 }
