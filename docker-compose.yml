@@ -5,10 +5,10 @@ services:
     command: npm run start:dev
     environment:
       - PORT=8080
+      - VERTEX_CLIENT_ID=$VERTEX_CLIENT_ID
+      - VERTEX_CLIENT_SECRET=$VERTEX_CLIENT_SECRET
     ports:
       - "8080:8080"
       - "5858:5858"
-    links:
-      - mysql
     volumes:
       - .:/app/
