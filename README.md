@@ -2,6 +2,14 @@
 
 ## Setup
 
+### Running with Docker
+
+```shell
+docker-compose -f ./docker-compose.yml up -d
+```
+
+### Running with Node
+
 ```shell
 # Clone repository
 git clone git@github.com:Vertexvis/vertex-koa.git && cd vertex-koa
