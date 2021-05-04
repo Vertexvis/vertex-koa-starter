@@ -103,10 +103,10 @@ function createItems(
   const items: SceneItem[] = [];
 
   function recurse(
-    components: Component[],
+    cs: Component[],
     component: Component,
     pathId: string,
-    transform?: number[][]
+    t?: number[][]
   ): void {
     if (component.component_instance) {
       const processInstance = (compInst: ComponentInstance): void => {
@@ -118,12 +118,12 @@ function createItems(
           1000
         );
         const idx = parseInt(compInst.index, 10);
-        components[idx].vertexIndex = idx;
+        cs[idx].vertexIndex = idx;
         recurse(
-          components,
-          components[idx],
+          cs,
+          cs[idx],
           `${pathId}/${compInst.id}`,
-          transform ? multiply(transform, instTransform) : instTransform
+          t ? multiply(t, instTransform) : instTransform
         );
       };
 

@@ -1,7 +1,7 @@
 {
   "name": "vertex-koa",
   "version": "0.0.1",
-  "description": "Vertex Koa.",
+  "description": "Vertex Koa Starter.",
   "license": "MIT",
   "scripts": {
     "build": "rm -rf dist && tsc",
@@ -13,33 +13,33 @@
     "start:dev": "tsc-watch --onSuccess 'node --inspect=0.0.0.0:5858 dist/index.js'"
   },
   "dependencies": {
-    "@vertexvis/vertex-api-client": "^0.6.7",
-    "async": "^3.2.0",
-    "fast-xml-parser": "^3.17.6",
-    "joi": "^14.3.1",
-    "koa": "^2.13.1",
-    "koa-bodyparser": "^4.3.0",
-    "koa-helmet": "^6.0.0",
-    "koa-router": "^10.0.0",
-    "pino": "^6.11.0"
+    "@vertexvis/vertex-api-client": "^0.11",
+    "async": "^3.2",
+    "fast-xml-parser": "^3.19",
+    "joi": "^14.3",
+    "koa": "^2.13",
+    "koa-bodyparser": "^4.3",
+    "koa-helmet": "^6.1",
+    "koa-router": "^10.0",
+    "pino": "^6.11"
   },
   "devDependencies": {
-    "@types/async": "^3.2.5",
-    "@types/joi": "^14.3.3",
-    "@types/koa": "^2.11.7",
-    "@types/koa-bodyparser": "^4.3.0",
-    "@types/koa-helmet": "^6.0.1",
-    "@types/koa-router": "^7.4.1",
-    "@types/node": "^14.14.22",
-    "@types/pino": "^6.3.5",
-    "prettier": "^2.2.1",
-    "tsc-watch": "^4.2.9",
-    "tslint": "^5.20.1",
-    "tslint-config-prettier": "^1.18.0",
-    "tslint-plugin-prettier": "^2.3.0",
-    "typescript": "^4.1.3"
+    "@types/async": "^3.2",
+    "@types/joi": "^14.3",
+    "@types/koa": "^2.13",
+    "@types/koa-bodyparser": "^4.3",
+    "@types/koa-helmet": "^6.0",
+    "@types/koa-router": "^7.4",
+    "@types/node": "^15.0",
+    "@types/pino": "^6.3",
+    "prettier": "^2.2",
+    "tsc-watch": "^4.2",
+    "tslint": "^6.1",
+    "tslint-config-prettier": "^1.18",
+    "tslint-plugin-prettier": "^2.3",
+    "typescript": "^4.2"
   },
   "engines": {
-    "node": ">=12.10.0"
+    "node": ">=12.10"
   }
 }
