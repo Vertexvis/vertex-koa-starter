@@ -1,4 +1,4 @@
-import { VertexClient, prettyJson } from "@vertexvis/vertex-api-client";
+import { VertexClient, prettyJson } from "@vertexvis/api-client-node";
 import { Agent } from "https";
 import { Context } from "koa";
 import { PvsMonitor } from "../../lib/pvs";
