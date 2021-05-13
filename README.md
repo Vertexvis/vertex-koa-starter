@@ -1,24 +1,20 @@
 # Vertex Koa Starter
 
-## Setup
+Use our starter application template using the Koa framework. We built this application following best practices for integrating the Vertex platform.
 
-### Running with Docker
+## Run locally in Docker
 
-```shell
-docker-compose -f ./docker-compose.yml up -d
-```
+1. Copy `.env.template` to `.env` and edit values
+1. Run `docker-compose --file ./docker-compose.yml up` to start the app locally
+1. Browse to http://localhost:8080/files
 
-### Running with Node
+If you pull down changes, you'll need to run `docker-compose --file ./docker-compose.yml build` to build them and then `docker-compose --file ./docker-compose.yml up` again.
 
-```shell
-# Clone repository
-git clone git@github.com:Vertexvis/vertex-koa.git && cd vertex-koa
+## Local development
 
-# Install dependencies
-yarn
+1. Copy `.env.template` to `.env` and edit values
+1. Install dependencies, `yarn install`
+1. Run `yarn dev` to start the local development server
+1. Browse to http://localhost:8080/files
 
-# Start server
-yarn start:dev
-```
-
-This starts a hot-reloading server, so code changes are immediately reflected. Browse to http://localhost:8080/health for a simple health check and http://localhost:8080/pvs for an example of converting a PVS XML file to JSON and calling the Vertex API.
+This starts a hot-reloading server, so code changes are immediately reflected.

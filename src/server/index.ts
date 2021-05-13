@@ -4,13 +4,13 @@ import * as Koa from "koa";
 import * as helmet from "koa-helmet";
 import { ServiceContainer } from "../container";
 import { AppError } from "../errors";
+import * as files from "./files";
 import * as health from "./health";
-import * as pvs from "./pvs";
 import * as middlewares from "./middlewares";
 
 export class AppServer {
   private app: Koa;
-  private server: Server;
+  private server: Server | undefined;
 
   constructor(app: Koa) {
     this.app = app;
@@ -18,10 +18,6 @@ export class AppServer {
 
   public listen(port: number): Server {
     this.server = this.app.listen(port);
-    return this.server;
-  }
-
-  public getServer(): Server {
     return this.server;
   }
 
@@ -33,7 +29,7 @@ export class AppServer {
     const checkPendingRequests = (
       callback: ErrorCallback<Error | undefined>
     ) => {
-      this.server.getConnections(
+      this.server?.getConnections(
         (err: Error | null, pendingRequests: number) => {
           if (err) {
             callback(err);
@@ -50,11 +46,11 @@ export class AppServer {
       retry(
         { times: 10, interval: 1000 },
         checkPendingRequests.bind(this),
-        ((error: Error | undefined) => {
+        ((error: unknown) => {
           if (error) {
-            this.server.close(() => reject(error));
+            this.server?.close(() => reject(error));
           } else {
-            this.server.close(() => resolve());
+            this.server?.close(() => resolve(undefined));
           }
         }).bind(this)
       );
@@ -74,7 +70,7 @@ export function createServer(container: ServiceContainer): AppServer {
 
   // Register routes
   health.init(app, container);
-  pvs.init(app, container);
+  files.init(app, container);
 
   return appSrv;
 }

@@ -1,14 +1,7 @@
 version: "2.4"
+
 services:
   app:
+    ports: [8080:8080, 5858:5858]
     build: .
-    command: yarn start:dev
-    environment:
-      - PORT=8080
-      - VERTEX_CLIENT_ID=$VERTEX_CLIENT_ID
-      - VERTEX_CLIENT_SECRET=$VERTEX_CLIENT_SECRET
-    ports:
-      - "8080:8080"
-      - "5858:5858"
-    volumes:
-      - .:/app/
+    env_file: [.env]

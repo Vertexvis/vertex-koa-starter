@@ -8,7 +8,7 @@ export default class HealthController {
     this.health = health;
   }
 
-  public getHealth(ctx: Context) {
+  public getHealth(ctx: Context): void {
     const status = this.health.getStatus();
 
     ctx.body = status;

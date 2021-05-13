@@ -3,7 +3,7 @@ import { createContainer } from "./container";
 import { HealthMonitor } from "./lib/health";
 import { AppServer, createServer } from "./server";
 
-export async function init() {
+export async function init(): Promise<void> {
   const logger = pino();
 
   try {
@@ -33,6 +33,7 @@ function registerProcessEvents(
     logger.error("UncaughtException", error);
   });
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   process.on("unhandledRejection", (reason: any, promise: any) => {
     logger.info(reason, promise);
   });

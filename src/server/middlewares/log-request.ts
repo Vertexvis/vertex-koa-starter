@@ -3,13 +3,13 @@ import { IMiddleware } from "koa-router";
 import { Logger } from "pino";
 
 export function logRequest(logger: Logger): IMiddleware {
-  return async (ctx: Context, next: () => Promise<any>) => {
+  return async (ctx: Context, next: () => Promise<unknown>) => {
     const start = Date.now();
 
     await next();
 
     const message = `[${ctx.status}] ${ctx.method} ${ctx.path}`;
-    const logData: any = {
+    const logData = {
       method: ctx.method,
       path: ctx.path,
       statusCode: ctx.status,

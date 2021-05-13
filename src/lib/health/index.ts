@@ -12,7 +12,7 @@ export class HealthMonitor {
     this.startTime = Date.now();
   }
 
-  public shuttingDown() {
+  public shuttingDown(): void {
     this.isShuttingDown = true;
   }
 

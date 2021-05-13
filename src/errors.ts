@@ -1,6 +1,12 @@
+interface Model {
+  code: number;
+  fields?: FieldError[];
+  message: string;
+}
+
 export class AppError extends Error {
   public code: number;
-  public error: Error;
+  public error?: Error;
 
   constructor(code: number, message: string, error?: Error) {
     super(message);
@@ -9,7 +15,7 @@ export class AppError extends Error {
     this.error = error;
   }
 
-  public toModel() {
+  public toModel(): Model {
     return {
       code: this.code,
       message: this.message,
@@ -31,11 +37,11 @@ export class FieldValidationError extends AppError {
     this.fields = fields;
   }
 
-  public toModel() {
+  public toModel(): Model {
     return {
       code: this.code,
-      message: this.message,
       fields: this.fields,
+      message: this.message,
     };
   }
 }

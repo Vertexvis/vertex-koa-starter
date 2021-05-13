@@ -3,7 +3,7 @@ import { IMiddleware } from "koa-router";
 import { Logger } from "pino";
 import { AppError } from "../../errors";
 
-const httpCodes = {
+const httpCodes: { [k: string]: number } = {
   10000: 500,
   20000: 404,
   30000: 400,
@@ -13,7 +13,7 @@ const httpCodes = {
 };
 
 export function errorHandler(logger: Logger): IMiddleware {
-  return async (ctx: Context, next: () => Promise<any>) => {
+  return async (ctx: Context, next: () => Promise<unknown>) => {
     try {
       await next();
     } catch (err) {

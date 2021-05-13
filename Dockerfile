@@ -1,9 +1,18 @@
-FROM node:14-alpine
+FROM node:14-alpine AS builder
 
-USER nobody
+COPY . /build
 
-WORKDIR app
+WORKDIR /build
 
-EXPOSE 8080 5858
+RUN yarn install && \
+  yarn build
 
-CMD ["node", "dist/index.js"]
+FROM node:14-alpine AS app
+
+WORKDIR /app
+
+COPY --from=builder /build/package.json ./package.json
+COPY --from=builder /build/node_modules ./node_modules
+COPY --from=builder /build/dist ./dist
+
+CMD ["yarn", "start"]
