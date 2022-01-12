@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@vertexvis/api-client-node": "^0.15.6",
-    "async": "^3.2",
+    "async": "^3.2.2",
     "dotenv": "^9.0.2",
     "koa": "^2.13.4",
     "koa-helmet": "^6.1",
