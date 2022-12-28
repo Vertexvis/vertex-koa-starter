@@ -16,7 +16,7 @@
     "@vertexvis/api-client-node": "^0.20.3",
     "async": "^3.2.4",
     "dotenv": "^9.0.2",
-    "koa": "^2.13.4",
+    "koa": "^2.14.1",
     "koa-helmet": "^6.1",
     "koa-router": "^10.1.1",
     "pino": "^6.14.0"
